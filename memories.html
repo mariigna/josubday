@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Memories | Akanksha</title>
+  <title>Birthday Side Quest | Joshua</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -12,40 +12,231 @@
   <div class="floating-bg"></div>
 
   <nav class="navbar glass">
-    <a href="index.html" class="logo">Akanksha</a>
+    <a href="index.html" class="logo">Joshua</a>
     <div class="nav-links">
-      <a href="memories.html">Memories</a>
+      <a href="memories.html">Side Quest</a>
       <a href="reasons.html">Reasons</a>
       <a href="letter.html">Letter</a>
       <a href="cake.html">Cake</a>
-      <a href="final.html">Final</a>
+      <a href="final.html">Perks</a>
     </div>
   </nav>
 
-  <header class="sub-hero reveal">
-    <p class="script-text">our little scrapbook</p>
-    <h1>Memory Lane</h1>
-    <p>Some days become photos, some photos become forever.</p>
-  </header>
+  <div class="music-widget">
+    <div class="music-player glass" id="musicPlayer" hidden>
+      <iframe
+        title="Joshua's birthday playlist on Spotify"
+        src="https://open.spotify.com/embed/playlist/0S6JnbD1CwKNPiSXgv6PSf?utm_source=generator&theme=0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+      ></iframe>
+    </div>
+    <button class="music-btn" id="musicBtn" type="button" aria-label="Open music player" aria-controls="musicPlayer" aria-expanded="false">♫</button>
+  </div>
 
-  <section class="masonry">
-    <div class="polaroid reveal">
-      <div class="photo" style="background-image: url('assets/1.jpg');"></div>
-      <p>favorite chaos😙(iykyk)</p>
-    </div>
-    <div class="polaroid tall reveal delay-1">
-      <div class="photo">
-  <video autoplay muted loop playsinline>
-    <source src="assets/birth.mp4" type="video/mp4">
-  </video>
-</div>
-      <p>Happy birthday Bulbul🫰</p>
-    </div>
-    <div class="polaroid reveal delay-2">
-      <div class="photo" style="background-image: url('assets/ak.jpeg');"></div>
-      <p>forever chapter🥰</p>
-    </div>
-  </section>
+  <main class="side-quest-page">
+    <header class="sub-hero reveal">
+      <p class="script-text">one birthday. four worlds. one very important mission.</p>
+      <h1>Birthday Side Quest</h1>
+      <p>Complete Batman, Maanster Hunter, Grand Prix, and Cyberpunk in order to unlock your birthday dessert.</p>
+    </header>
+
+    <p class="quest-progress" id="questProgress" aria-live="polite"></p>
+    <section class="quest-worlds" aria-label="Choose your birthday quest">
+      <button class="quest-world glass reveal" type="button" data-quest="gotham-night-city" aria-pressed="false">
+        <span class="quest-icon" aria-hidden="true">🦇</span>
+        <span class="quest-world-title">Batman x Night City</span>
+        <span class="quest-world-description">Gotham's dark knight meets a neon-lit city. Track the signal and protect the birthday legend.</span>
+        <span class="quest-world-prompt">Choose this quest →</span>
+      </button>
+      <button class="quest-world glass reveal delay-1" type="button" data-quest="maanster-hunter" aria-pressed="false">
+        <span class="quest-icon" aria-hidden="true">🐉</span>
+        <span class="quest-world-title">Maanster Hunter</span>
+        <span class="quest-world-description">Gear up, track a legendary monster, and hunt for the ultimate birthday loot.</span>
+        <span class="quest-world-prompt">Choose this quest →</span>
+      </button>
+      <button class="quest-world glass reveal delay-2" type="button" data-quest="formula-one" aria-pressed="false">
+        <span class="quest-icon" aria-hidden="true">🏎️</span>
+        <span class="quest-world-title">Grand Prix Birthday</span>
+        <span class="quest-world-description">Suit up, hit the track, and race toward your birthday surprise.</span>
+        <span class="quest-world-prompt">Choose this quest →</span>
+      </button>
+      <button class="quest-world glass reveal delay-3" type="button" data-quest="duel-runner" aria-pressed="false">
+        <span class="quest-icon" aria-hidden="true">🃏</span>
+        <span class="quest-world-title">Cyberpunk: The Moon Run</span>
+        <span class="quest-world-description">One last Edgerunners gig: get Joshua’s birthday shard back from the moon dock.</span>
+        <span class="quest-world-prompt">Choose this quest →</span>
+      </button>
+    </section>
+
+    <section class="quest-panel glass" id="questPanel" hidden aria-live="polite">
+      <p class="script-text">your mission</p>
+      <h2 id="questTitle"></h2>
+      <p id="questDescription"></p>
+      <div class="batman-clues" id="batmanClues" hidden>
+        <p class="clue-instructions">Solve all three clues to recover the missing lava cake.</p>
+        <fieldset class="clue-card" data-clue="record-store">
+          <legend>Batman found a song clue. Where should he snoop first?</legend>
+          <label><input type="radio" name="clue-record-store" value="race-track"> In the F1 pit lane</label>
+          <label><input type="radio" name="clue-record-store" value="record-shop"> At Gotham Records</label>
+          <label><input type="radio" name="clue-record-store" value="arcade"> In an old arcade</label>
+          <button class="btn ghost check-clue" type="button">Check clue</button>
+          <p class="clue-feedback" aria-live="polite"></p>
+        </fieldset>
+        <fieldset class="clue-card" data-clue="hideout">
+          <legend>Okay, there's a LEGO trail. Where would you hide a cake?</legend>
+          <label><input type="radio" name="clue-hideout" value="batcave"> In the Batcave</label>
+          <label><input type="radio" name="clue-hideout" value="lego-hideout"> In a LEGO hideout at the arcade</label>
+          <label><input type="radio" name="clue-hideout" value="finish-line"> At the Grand Prix finish line</label>
+          <button class="btn ghost check-clue" type="button">Check clue</button>
+          <p class="clue-feedback" aria-live="polite"></p>
+        </fieldset>
+        <fieldset class="clue-card" data-clue="code">
+          <legend>Last one: what number should Batman try on the keypad?</legend>
+          <label><input type="radio" name="clue-code" value="23"> 23</label>
+          <label><input type="radio" name="clue-code" value="24"> 24</label>
+          <label><input type="radio" name="clue-code" value="25"> 25</label>
+          <button class="btn ghost check-clue" type="button">Check clue</button>
+          <p class="clue-feedback" aria-live="polite"></p>
+        </fieldset>
+      </div>
+      <div class="grand-prix-game" id="grandPrixGame" hidden>
+        <p class="clue-instructions">Win each reaction challenge to advance around the circuit. Seven stops to the finish!</p>
+        <div class="race-map-wrap">
+          <svg class="grand-prix-map" id="grandPrixMap" viewBox="0 0 640 380" role="img" aria-label="Grand Prix circuit map with seven stops and a finish line">
+            <path class="race-track-outline" d="M88 96 C88 78 101 66 124 66 L492 66 Q521 66 521 94 L521 120 C521 143 510 165 496 187 L438 286 Q427 305 414 288 L362 218 Q352 207 333 204 L278 197 Q261 195 247 184 L222 165 Q210 157 191 157 L145 157 Q128 157 119 144 L103 117 Q88 116 88 96 Z" />
+            <path class="race-track-base" id="grandPrixTrack" d="M88 96 C88 78 101 66 124 66 L492 66 Q521 66 521 94 L521 120 C521 143 510 165 496 187 L438 286 Q427 305 414 288 L362 218 Q352 207 333 204 L278 197 Q261 195 247 184 L222 165 Q210 157 191 157 L145 157 Q128 157 119 144 L103 117 Q88 116 88 96 Z" />
+            <path class="race-track-progress" id="grandPrixProgress" d="M88 96 C88 78 101 66 124 66 L492 66 Q521 66 521 94 L521 120 C521 143 510 165 496 187 L438 286 Q427 305 414 288 L362 218 Q352 207 333 204 L278 197 Q261 195 247 184 L222 165 Q210 157 191 157 L145 157 Q128 157 119 144 L103 117 Q88 116 88 96 Z" />
+            <g id="raceStopMarkers" aria-hidden="true"></g>
+            <text class="race-start-flag" x="68" y="91" aria-hidden="true">🏁</text>
+            <text class="race-car" id="raceCar" x="88" y="96" aria-hidden="true">🏎️</text>
+          </svg>
+        </div>
+        <p class="race-stop-status" id="raceStopStatus" aria-live="polite"></p>
+        <div class="race-timing" id="raceTiming" aria-label="Timing challenge">
+          <span class="race-target" id="raceTarget"></span>
+          <span class="race-indicator" id="raceIndicator"></span>
+        </div>
+        <button class="btn primary" id="raceStopButton" type="button">Start Stop 1</button>
+        <p class="race-feedback" id="raceFeedback" aria-live="polite">Time your stop and lock in the win!</p>
+      </div>
+      <div class="monster-hunt-game" id="monsterHuntGame" hidden>
+        <p class="clue-instructions">Track the Lava Cake Wyvern, gear up, and bring home the birthday loot!</p>
+        <div class="hunt-tracks" id="huntTracks">
+          <h3>1. Follow the tracks</h3>
+          <p>Three signs point toward the wyvern’s lair. Pick the right trail at each clue.</p>
+          <div class="hunt-map-card">
+            <div class="hunt-map" id="huntMap" aria-label="Monster hunting map with three clue locations">
+              <svg class="hunt-map-trail" viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M80 435 C190 420 150 310 300 330 S390 205 520 230 S650 320 715 190 S850 130 925 95" />
+              </svg>
+              <button class="hunt-map-pin pin-vinyl" type="button" data-map-clue="vinyl" aria-label="Go to the vinyl clue">🎵<span>Vinyl trail</span></button>
+              <button class="hunt-map-pin pin-lego" type="button" data-map-clue="lego" aria-label="Go to the LEGO clue">🧱<span>Brick marks</span></button>
+              <button class="hunt-map-pin pin-crumbs" type="button" data-map-clue="crumbs" aria-label="Go to the chocolate clue">🍫<span>Chocolate trail</span></button>
+              <div class="hunter-profile">
+                <img src="assets/maanster-joshua.png" alt="Joshua, the birthday hunter" />
+                <span><strong>Hunter Joshua</strong><small>Birthday hunt · Rank 24</small></span>
+              </div>
+              <span class="map-coordinate" aria-hidden="true">FIELD MAP · SECTOR 24</span>
+            </div>
+            <img class="hunt-claw-marks" src="assets/maanster-claw-marks.png" alt="" aria-hidden="true" />
+          </div>
+          <fieldset class="hunt-clue" data-hunt-clue="vinyl">
+            <legend>There's a record by the trail. Where would you look next?</legend>
+            <label><input type="radio" name="hunt-vinyl" value="music"> Where the music is coming from</label>
+            <label><input type="radio" name="hunt-vinyl" value="water"> Down by the stream</label>
+            <button class="btn ghost check-hunt-clue" type="button">Follow clue</button>
+            <p class="hunt-clue-feedback" aria-live="polite"></p>
+          </fieldset>
+          <fieldset class="hunt-clue" data-hunt-clue="lego">
+            <legend>There's LEGO all over the ground. Which way would you go?</legend>
+            <label><input type="radio" name="hunt-lego" value="cave"> Into that LEGO-shaped cave</label>
+            <label><input type="radio" name="hunt-lego" value="cliff"> Up the rocky cliff</label>
+            <button class="btn ghost check-hunt-clue" type="button">Follow clue</button>
+            <p class="hunt-clue-feedback" aria-live="polite"></p>
+          </fieldset>
+          <fieldset class="hunt-clue" data-hunt-clue="crumbs">
+            <legend>Chocolate crumbs... think we've found the lair?</legend>
+            <label><input type="radio" name="hunt-crumbs" value="wyvern"> The Lava Cake Wyvern's lair</label>
+            <label><input type="radio" name="hunt-crumbs" value="camp"> The hunter's camp</label>
+            <button class="btn ghost check-hunt-clue" type="button">Follow clue</button>
+            <p class="hunt-clue-feedback" aria-live="polite"></p>
+          </fieldset>
+        </div>
+        <div class="hunt-preparation" id="huntPreparation" hidden>
+          <h3>2. Choose your weapon</h3>
+          <p>Pick your hunting style before facing the Lava Cake Wyvern.</p>
+          <div class="weapon-options">
+            <button class="weapon-choice" type="button" data-weapon="Great Sword" aria-pressed="false"><span>⚔️</span><strong>Great Sword</strong><small>One mighty strike</small></button>
+            <button class="weapon-choice" type="button" data-weapon="Dual Blades" aria-pressed="false"><span>🗡️</span><strong>Dual Blades</strong><small>Fast and nimble</small></button>
+            <button class="weapon-choice" type="button" data-weapon="Hunting Horn" aria-pressed="false"><span>🎵</span><strong>Hunting Horn</strong><small>Fight to the beat</small></button>
+          </div>
+          <button class="btn primary" id="startHunt" type="button" disabled>Choose your weapon to start</button>
+        </div>
+        <div class="hunt-battle" id="huntBattle" hidden>
+          <div class="hunt-battle-scene">
+            <img class="hunt-wyvern" src="assets/maanster-wyvern.png" alt="The Lava Cake Wyvern appears before the hunter" />
+            <div class="hunt-battle-heading">
+              <div><h3>The Lava Cake Wyvern</h3><p id="huntWeaponLabel"></p></div>
+            </div>
+          </div>
+          <p class="hunt-hearts" id="huntHearts" aria-label="Three hunter hearts">❤️ ❤️ ❤️</p>
+          <div class="monster-health" role="progressbar" aria-label="Wyvern stamina" aria-valuemin="0" aria-valuemax="3" aria-valuenow="3"><span id="monsterHealthBar"></span></div>
+          <p class="hunt-turn" id="huntTurn" aria-live="polite"></p>
+          <div class="hunt-actions" id="huntActions">
+            <button class="btn ghost hunt-action" type="button" data-action="dodge">Dodge</button>
+            <button class="btn ghost hunt-action" type="button" data-action="guard">Guard</button>
+            <button class="btn primary hunt-action" type="button" data-action="attack">Attack</button>
+          </div>
+          <p class="hunt-feedback" id="huntFeedback" aria-live="polite"></p>
+        </div>
+      </div>
+      <div class="cyberpunk-game" id="cyberpunkGame" hidden>
+        <div class="cyberpunk-scene">
+          <img src="assets/cyberpunk-moon.png" alt="Two Edgerunners sitting together beneath the moon" />
+          <span class="cyberpunk-scene-label">EDGERUNNERS · THE MOON</span>
+          <div class="cyberpunk-runner-profile">
+            <img src="assets/joshua-edgerunner.png" alt="Joshua, ready for his birthday gig" />
+            <span><strong>Joshua</strong><small>Edgerunner · Birthday rank 24</small></span>
+          </div>
+        </div>
+        <p class="clue-instructions">The moon signal is scrambled. Listen, remember the beat, and send it back to Joshua.</p>
+        <section class="cyberpunk-step" id="cyberpunkSignal">
+          <h3>Sync the signal</h3>
+          <p>Play each transmission, then tap the notes back in the same order. Three rounds and you’re through.</p>
+          <div class="cyberpunk-signal-status" aria-live="polite">
+            <span id="cyberpunkRoundLabel">ROUND 1 / 3</span>
+            <p id="cyberpunkSignalMessage">Ready when you are, Joshua.</p>
+          </div>
+          <button class="btn primary" id="playCyberpunkSignal" type="button">Play the signal</button>
+          <div class="cyberpunk-sequence" id="cyberpunkSequence" aria-label="Signal sequence"></div>
+          <div class="cyberpunk-signal-pads" id="cyberpunkSignalPads" aria-label="Signal notes">
+            <button class="cyberpunk-pad" type="button" data-note="0" aria-label="Play blue note">●</button>
+            <button class="cyberpunk-pad" type="button" data-note="1" aria-label="Play gold note">●</button>
+            <button class="cyberpunk-pad" type="button" data-note="2" aria-label="Play red note">●</button>
+            <button class="cyberpunk-pad" type="button" data-note="3" aria-label="Play white note">●</button>
+          </div>
+          <button class="btn ghost" id="replayCyberpunkSignal" type="button" hidden>Hear it again</button>
+          <p class="cyberpunk-feedback" id="cyberpunkFeedback" aria-live="polite"></p>
+        </section>
+      </div>
+      <button class="btn primary" id="completeQuest" type="button">Mission complete — claim your reward</button>
+    </section>
+
+    <section class="quest-reward glass" id="questReward" hidden aria-live="polite">
+      <p class="script-text">quest complete!</p>
+      <h2>Choose your birthday dessert</h2>
+      <p>Every great adventure deserves something sweet.</p>
+      <div class="dessert-options">
+        <button class="btn ghost dessert-choice" type="button" data-dessert="Cheesecake" aria-pressed="false">🍰 Cheesecake</button>
+        <button class="btn ghost dessert-choice" type="button" data-dessert="Chocolate lava cake" aria-pressed="false">🍫 Chocolate lava cake</button>
+      </div>
+      <div class="quest-finale" id="questFinale" hidden>
+        <p id="dessertMessage"></p>
+        <p>Your reward also includes a vinyl listening session, a LEGO build, and a Polaroid photoshoot together. And obviously, we’ll watch Adventure Time while we celebrate. 💛</p>
+      </div>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>

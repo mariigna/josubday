@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reasons | Akanksha</title>
+  <title>Reasons | Joshua</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -12,28 +12,40 @@
   <div class="floating-bg"></div>
 
   <nav class="navbar glass">
-    <a href="index.html" class="logo">Akanksha</a>
+    <a href="index.html" class="logo">Joshua</a>
     <div class="nav-links">
-      <a href="memories.html">Memories</a>
+      <a href="memories.html">Side Quest</a>
       <a href="reasons.html">Reasons</a>
       <a href="letter.html">Letter</a>
       <a href="cake.html">Cake</a>
-      <a href="final.html">Final</a>
+      <a href="final.html">Perks</a>
     </div>
   </nav>
 
+  <div class="music-widget">
+    <div class="music-player glass" id="musicPlayer" hidden>
+      <iframe
+        title="Joshua's birthday playlist on Spotify"
+        src="https://open.spotify.com/embed/playlist/0S6JnbD1CwKNPiSXgv6PSf?utm_source=generator&theme=0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+      ></iframe>
+    </div>
+    <button class="music-btn" id="musicBtn" type="button" aria-label="Open music player" aria-controls="musicPlayer" aria-expanded="false">♫</button>
+  </div>
+
   <header class="sub-hero reveal">
-    <p class="script-text">one hundred tiny Reasons Why</p>
-    <h1>I Love You</h1>
-    <p>Tap and smile</p>
+    <p class="script-text">24 reasons, one legendary guy</p>
+    <h1>Why You’re the Alpha</h1>
+    <p>Tap to reveal your legendary love notes</p>
     <button class="btn primary" id="randomReasonBtn">Click to know the Reasons</button>
     <div class="random-reason glass" id="randomReason">You make ordinary things magical.</div>
   </header>
 
-  <section class="reason-grid" id="reasonGrid" data-image-folder="assets" data-image-count="100">
+  <section class="reason-grid" id="reasonGrid" data-image-folder="assets" data-image-count="24">
   </section>
 
-  <footer class="footer">100 reasons and still not enough ✦</footer>
+  <footer class="footer">24 reasons and still not enough ✦</footer>
   <script src="script.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Forever | Akanksha</title>
+  <title>Claim Your Rewards | Joshua</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -11,21 +11,70 @@
   <div class="cursor-glow"></div>
 
   <nav class="navbar glass">
-    <a href="index.html" class="logo">Akanksha</a>
+    <a href="index.html" class="logo">Joshua</a>
     <div class="nav-links">
-      <a href="memories.html">Memories</a>
+      <a href="memories.html">Side Quest</a>
       <a href="reasons.html">Reasons</a>
       <a href="letter.html">Letter</a>
       <a href="cake.html">Cake</a>
-      <a href="final.html">Final</a>
+      <a href="final.html">Perks</a>
     </div>
   </nav>
 
-  <main class="final-page reveal">
-    <p class="script-text">forever chapter</p>
-    <h1>You’ll always be my favorite chapter.</h1>
-    <p>Even when this little website ends, the love inside it keeps glowing.</p>
-    <a class="btn primary" href="index.html">Replay Story</a>
+  <div class="music-widget">
+    <div class="music-player glass" id="musicPlayer" hidden>
+      <iframe
+        title="Joshua's birthday playlist on Spotify"
+        src="https://open.spotify.com/embed/playlist/0S6JnbD1CwKNPiSXgv6PSf?utm_source=generator&theme=0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+      ></iframe>
+    </div>
+    <button class="music-btn" id="musicBtn" type="button" aria-label="Open music player" aria-controls="musicPlayer" aria-expanded="false">♫</button>
+  </div>
+
+  <main class="final-page claim-page">
+    <header class="claim-header reveal">
+      <p class="script-text">you made it to the reward stop</p>
+      <h1>Claim Your Birthday Perks</h1>
+      <p>Official birthday rewards for Joshua. Redeem whenever you want!</p>
+    </header>
+
+    <section class="claim-grid" aria-label="Birthday rewards">
+      <article class="claim-card glass reveal" data-claim="lava-cake" data-limit="3">
+        <span class="claim-icon" aria-hidden="true">🍫</span>
+        <h2>Claim Free Lava Cake</h2>
+        <p class="claim-remaining">3 claims available</p>
+        <button class="btn primary claim-button" type="button">Claim reward</button>
+        <p class="claim-message" aria-live="polite"></p>
+      </article>
+
+      <article class="claim-card glass reveal delay-1" data-claim="kiss" data-limit="unlimited">
+        <span class="claim-icon" aria-hidden="true">💋</span>
+        <h2>Claim Free Kiss</h2>
+        <p class="claim-remaining">Unlimited claims</p>
+        <button class="btn primary claim-button" type="button">Claim reward</button>
+        <p class="claim-message" aria-live="polite"></p>
+      </article>
+
+      <article class="claim-card glass reveal delay-2" data-claim="birthday-gift" data-limit="1">
+        <span class="claim-icon" aria-hidden="true">🎁</span>
+        <h2>Claim Bday Gift</h2>
+        <p class="claim-remaining">1 claim available</p>
+        <button class="btn primary claim-button" type="button">Claim reward</button>
+        <p class="claim-message" aria-live="polite"></p>
+      </article>
+
+      <article class="claim-card glass reveal delay-3" data-claim="maan-pays" data-limit="3">
+        <span class="claim-icon" aria-hidden="true">✨</span>
+        <h2>Claim Choose and Maan Pays</h2>
+        <p class="claim-remaining">3 claims available</p>
+        <button class="btn primary claim-button" type="button">Claim reward</button>
+        <p class="claim-message" aria-live="polite"></p>
+      </article>
+    </section>
+
+    <a class="btn ghost claim-replay" href="index.html">Back to the Birthday Site</a>
   </main>
 
   <script src="script.js"></script>
