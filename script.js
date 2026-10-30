@@ -214,7 +214,7 @@ let huntHearts = 3;
 let wyvernStamina = 3;
 let huntTurnIndex = 0;
 const huntClues = {
-  vinyl: 'music',
+  vinyl: 'deep-tracks',
   lego: 'cave',
   crumbs: 'wyvern'
 };
@@ -673,9 +673,9 @@ batmanClues?.querySelectorAll('.clue-card').forEach((clue) => {
     }
 
     const correctAnswers = {
-      'record-store': 'record-shop',
+      'record-store': 'race-track',
       hideout: 'lego-hideout',
-      code: '24'
+      code: 'joker'
     };
     if (answer.value !== correctAnswers[clue.dataset.clue]) {
       feedback.textContent = 'Not quite—check the clue and try again.';

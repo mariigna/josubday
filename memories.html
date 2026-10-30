@@ -76,26 +76,26 @@
       <div class="batman-clues" id="batmanClues" hidden>
         <p class="clue-instructions">Solve all three clues to recover the missing lava cake.</p>
         <fieldset class="clue-card" data-clue="record-store">
-          <legend>Batman found a song clue. Where should he snoop first?</legend>
-          <label><input type="radio" name="clue-record-store" value="race-track"> In the F1 pit lane</label>
-          <label><input type="radio" name="clue-record-store" value="record-shop"> At Gotham Records</label>
-          <label><input type="radio" name="clue-record-store" value="arcade"> In an old arcade</label>
+          <legend>Batman spots fresh tire marks beside the cake crumbs. Where should he check?</legend>
+          <label><input type="radio" name="clue-record-store" value="record-shop"> Gotham Records</label>
+          <label><input type="radio" name="clue-record-store" value="race-track"> The F1 pit lane</label>
+          <label><input type="radio" name="clue-record-store" value="arcade"> The old arcade</label>
           <button class="btn ghost check-clue" type="button">Check clue</button>
           <p class="clue-feedback" aria-live="polite"></p>
         </fieldset>
         <fieldset class="clue-card" data-clue="hideout">
-          <legend>Okay, there's a LEGO trail. Where would you hide a cake?</legend>
-          <label><input type="radio" name="clue-hideout" value="batcave"> In the Batcave</label>
-          <label><input type="radio" name="clue-hideout" value="lego-hideout"> In a LEGO hideout at the arcade</label>
-          <label><input type="radio" name="clue-hideout" value="finish-line"> At the Grand Prix finish line</label>
+          <legend>A Polaroid from the scene has one place reflected in the lens. Where’s the cake?</legend>
+          <label><input type="radio" name="clue-hideout" value="batcave"> The Batcave</label>
+          <label><input type="radio" name="clue-hideout" value="lego-hideout"> The LEGO hideout at the arcade</label>
+          <label><input type="radio" name="clue-hideout" value="finish-line"> The Grand Prix finish line</label>
           <button class="btn ghost check-clue" type="button">Check clue</button>
           <p class="clue-feedback" aria-live="polite"></p>
         </fieldset>
         <fieldset class="clue-card" data-clue="code">
-          <legend>Last one: what number should Batman try on the keypad?</legend>
-          <label><input type="radio" name="clue-code" value="23"> 23</label>
-          <label><input type="radio" name="clue-code" value="24"> 24</label>
-          <label><input type="radio" name="clue-code" value="25"> 25</label>
+          <legend>The hacker left one last message: “You know that laugh.” Who gave themselves away?</legend>
+          <label><input type="radio" name="clue-code" value="joker"> The Joker</label>
+          <label><input type="radio" name="clue-code" value="alfred"> Alfred</label>
+          <label><input type="radio" name="clue-code" value="robin"> Robin</label>
           <button class="btn ghost check-clue" type="button">Check clue</button>
           <p class="clue-feedback" aria-live="polite"></p>
         </fieldset>
@@ -142,9 +142,10 @@
             <img class="hunt-claw-marks" src="assets/maanster-claw-marks.png" alt="" aria-hidden="true" />
           </div>
           <fieldset class="hunt-clue" data-hunt-clue="vinyl">
-            <legend>There's a record by the trail. Where would you look next?</legend>
-            <label><input type="radio" name="hunt-vinyl" value="music"> Where the music is coming from</label>
-            <label><input type="radio" name="hunt-vinyl" value="water"> Down by the stream</label>
+            <legend>Three sets of footprints cross the mud. Which trail is big enough to belong to the wyvern?</legend>
+            <label><input type="radio" name="hunt-vinyl" value="tiny-prints"> The tiny prints by the stream</label>
+            <label><input type="radio" name="hunt-vinyl" value="deep-tracks"> The deep clawed tracks</label>
+            <label><input type="radio" name="hunt-vinyl" value="joshua-boots"> Joshua’s boot prints</label>
             <button class="btn ghost check-hunt-clue" type="button">Follow clue</button>
             <p class="hunt-clue-feedback" aria-live="polite"></p>
           </fieldset>
