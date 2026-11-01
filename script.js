@@ -49,19 +49,19 @@ const reasons = [
   'Your laugh.',
   'Your unlaughable jokes.',
   'Your facial expressions.',
-  'You glow without trying.',
-  'You make everything better.',
-  'You listen like home.',
-  'You are effortlessly classy.',
-  'You deserve the prettiest life.',
-  'You are a whole comfort place.',
-  'Your presence feels peaceful.',
-  'You are pure main character energy.',
-  'You make friendship feel precious.',
-  'You are loved more than words.',
-  'You bring calm into chaos.',
-  'You make every photo feel special.',
-  'You have the cutest little habits.',
+  'Your lock in face is incredible.',
+  'You have great respect for others.',
+  "You're rarely negative.",
+  "You're devotion with certain things.",
+  'Your farts.',
+  'Your LOUD burps (di talaga ako un).',
+  'YOUR MAJESTIC VOICE.',
+  'Your weirdoness.',
+  'Your presence makes me feel complete.',
+  'You never fail anyone to smile.',
+  'Bilis mo manghawa ng energy.',
+  'You are very easy to talk to.',
+  'You always think about me.',
   'Your paasar.'
 ];
 
@@ -196,7 +196,6 @@ function completeCurrentQuest() {
   selectedQuest = null;
   selectedQuestId = null;
   questPanel.hidden = true;
-  $('#questFinale').hidden = true;
   updateQuestProgress();
 
   if (completedQuests.length === questOrder.length) {
@@ -232,7 +231,7 @@ let raceTargetPosition = 0;
 const raceStops = [
   { name: 'Vinyl Alley', target: 22 },
   { name: 'LEGO Garage', target: 49 },
-  { name: 'Polaroid Promenade', target: 76 },
+  { name: 'IKEA Fado Lamp', target: 76 },
   { name: 'Adventure Time Tunnel', target: 36 },
   { name: 'Cheesecake Chicane', target: 64 },
   { name: 'Lava Cake Corner', target: 17 },
@@ -466,7 +465,7 @@ function showHuntTurn() {
     $('#huntFeedback').textContent = `${selectedWeapon} secured the victory! Hunter Rank 24 unlocked!`;
     completeQuestButton.hidden = false;
     completeQuestButton.disabled = false;
-    completeQuestButton.textContent = 'Complete Maanster Hunter quest';
+    completeQuestButton.textContent = 'Collect your lava cake!';
     return;
   }
 
@@ -516,13 +515,12 @@ questWorlds.forEach((world) => {
     completeQuestButton.hidden = Boolean(selectedQuest.hasRace);
     completeQuestButton.textContent = selectedQuestId === 'duel-runner'
       ? 'Finish the birthday gig first'
-      : 'Complete this quest';
+      : 'Collect your lava cake!';
     if (selectedQuest.hasRace) resetGrandPrix();
     if (selectedQuest.hasHunt) resetMonsterHunt();
     if (selectedQuest.hasCyberpunk) resetCyberpunk();
     questPanel.hidden = false;
-    $('#questFinale').hidden = true;
-    $$('.dessert-choice').forEach((choice) => choice.setAttribute('aria-pressed', 'false'));
+
     questPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
   });
 });
@@ -561,7 +559,7 @@ $$('.cyberpunk-pad').forEach((button) => {
         $('#playCyberpunkSignal').hidden = true;
         $('#cyberpunkFeedback').textContent = 'Transmission complete. Happy birthday, Joshua! 💛';
         completeQuestButton.disabled = false;
-        completeQuestButton.textContent = 'Complete Cyberpunk gig';
+        completeQuestButton.textContent = 'Collect your lava cake!';
       } else {
         $('#cyberpunkRoundLabel').textContent = `ROUND ${cyberpunkRound} / ${cyberpunkSequences.length}`;
         $('#cyberpunkSignalMessage').textContent = 'Signal saved! Ready for the next one?';
@@ -674,7 +672,7 @@ batmanClues?.querySelectorAll('.clue-card').forEach((clue) => {
 
     const correctAnswers = {
       'record-store': 'race-track',
-      hideout: 'lego-hideout',
+      hideout: 'gotham-rotisserie',
       code: 'joker'
     };
     if (answer.value !== correctAnswers[clue.dataset.clue]) {
@@ -691,7 +689,7 @@ batmanClues?.querySelectorAll('.clue-card').forEach((clue) => {
 
     if (solvedClues.size === 3) {
       completeQuestButton.disabled = false;
-      completeQuestButton.textContent = 'Complete Batman mission';
+      completeQuestButton.textContent = 'Collect your lava cake!';
     }
   });
 });
@@ -722,7 +720,7 @@ raceStopButton?.addEventListener('click', () => {
       raceStopButton.textContent = 'Race complete!';
       raceStopButton.disabled = true;
       completeQuestButton.hidden = false;
-      completeQuestButton.textContent = 'Complete Grand Prix quest';
+      completeQuestButton.textContent = 'Collect your lava cake!';
       return;
     }
 
@@ -756,16 +754,6 @@ completeQuestButton?.addEventListener('click', () => {
   if (selectedQuest.hasCyberpunk && !cyberpunkComplete) return;
 
   completeCurrentQuest();
-});
-
-$$('.dessert-choice').forEach((choice) => {
-  choice.addEventListener('click', () => {
-    $$('.dessert-choice').forEach((option) => {
-      option.setAttribute('aria-pressed', String(option === choice));
-    });
-    $('#dessertMessage').textContent = `${choice.dataset.dessert} it is — birthday reward officially unlocked!`;
-    $('#questFinale').hidden = false;
-  });
 });
 
 const claimCards = $$('.claim-card');

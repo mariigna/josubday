@@ -25,8 +25,8 @@
   <div class="music-widget">
     <div class="music-player glass" id="musicPlayer" hidden>
       <iframe
-        title="Joshua's birthday playlist on Spotify"
-        src="https://open.spotify.com/embed/playlist/0S6JnbD1CwKNPiSXgv6PSf?utm_source=generator&theme=0"
+        title="Joshua's birthday playlist on Apple Music"
+        src="https://embed.music.apple.com/qa/playlist/josuday/pl.u-pMyllRjTWzE7b9k"
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         loading="lazy"
       ></iframe>
@@ -84,15 +84,15 @@
           <p class="clue-feedback" aria-live="polite"></p>
         </fieldset>
         <fieldset class="clue-card" data-clue="hideout">
-          <legend>A Polaroid from the scene has one place reflected in the lens. Where’s the cake?</legend>
-          <label><input type="radio" name="clue-hideout" value="batcave"> The Batcave</label>
-          <label><input type="radio" name="clue-hideout" value="lego-hideout"> The LEGO hideout at the arcade</label>
+          <legend>Batman finds a rotisserie chicken receipt beside the cake crumbs. Where should he follow the smell?</legend>
+          <label><input type="radio" name="clue-hideout" value="gotham-rotisserie"> Gotham Rotisserie</label>
           <label><input type="radio" name="clue-hideout" value="finish-line"> The Grand Prix finish line</label>
+          <label><input type="radio" name="clue-hideout" value="arcade"> The old arcade</label>
           <button class="btn ghost check-clue" type="button">Check clue</button>
           <p class="clue-feedback" aria-live="polite"></p>
         </fieldset>
         <fieldset class="clue-card" data-clue="code">
-          <legend>The hacker left one last message: “You know that laugh.” Who gave themselves away?</legend>
+          <legend>A Coke Zero can with a Joker card tucked under it was left at the hideout. Who gave themselves away?</legend>
           <label><input type="radio" name="clue-code" value="joker"> The Joker</label>
           <label><input type="radio" name="clue-code" value="alfred"> Alfred</label>
           <label><input type="radio" name="clue-code" value="robin"> Robin</label>
@@ -221,21 +221,14 @@
           <p class="cyberpunk-feedback" id="cyberpunkFeedback" aria-live="polite"></p>
         </section>
       </div>
-      <button class="btn primary" id="completeQuest" type="button">Mission complete — claim your reward</button>
+      <button class="btn primary" id="completeQuest" type="button">Collect your lava cake!</button>
     </section>
 
     <section class="quest-reward glass" id="questReward" hidden aria-live="polite">
       <p class="script-text">quest complete!</p>
-      <h2>Choose your birthday dessert</h2>
-      <p>Every great adventure deserves something sweet.</p>
-      <div class="dessert-options">
-        <button class="btn ghost dessert-choice" type="button" data-dessert="Cheesecake" aria-pressed="false">🍰 Cheesecake</button>
-        <button class="btn ghost dessert-choice" type="button" data-dessert="Chocolate lava cake" aria-pressed="false">🍫 Chocolate lava cake</button>
-      </div>
-      <div class="quest-finale" id="questFinale" hidden>
-        <p id="dessertMessage"></p>
-        <p>Your reward also includes a vinyl listening session, a LEGO build, and a Polaroid photoshoot together. And obviously, we’ll watch Adventure Time while we celebrate. 💛</p>
-      </div>
+      <h2>Collect your lava cake!</h2>
+      <p>🍫 Your chocolate lava cake is waiting!</p>
+      <p>Your reward also includes a vinyl listening session, a LEGO build, and a Polaroid photoshoot together. And obviously, we’ll watch Adventure Time while we celebrate. 💛</p>
     </section>
   </main>
 
