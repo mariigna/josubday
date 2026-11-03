@@ -19,7 +19,7 @@ musicBtn?.addEventListener('click', () => {
   musicBtn.setAttribute('aria-label', isOpen ? 'Close music player' : 'Open music player');
 });
 
-const birthdayDate = new Date('2027-05-24T00:00:00').getTime();
+const birthdayDate = new Date('2026-11-05T00:00:00').getTime();
 function updateCountdown() {
   const countdown = $('#countdown');
   if (!countdown) return;
@@ -68,7 +68,7 @@ const reasons = [
 const reasonGrid = $('#reasonGrid');
 if (reasonGrid) {
   const imageFolder = reasonGrid.dataset.imageFolder || 'assets';
-  const reasonImages = Array.from({ length: reasons.length }, (_, index) => `${imageFolder}/${index + 1}.jpg`);
+  const reasonImages = Array.from({ length: reasons.length }, (_, index) => `${imageFolder}/${index === 0 ? 31 : index + 1}.jpeg`);
 
   reasonGrid.innerHTML = reasons
     .map((reason, index) => {
