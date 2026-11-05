@@ -162,15 +162,18 @@ function updateQuestProgress() {
   questWorlds.forEach((world, index) => {
     const isComplete = index < nextQuestIndex;
     const isNext = index === nextQuestIndex;
-    world.disabled = !isNext;
+    const isCyberpunk = world.dataset.quest === 'duel-runner';
+    world.disabled = !isNext && !isCyberpunk;
     world.classList.toggle('is-complete', isComplete);
-    world.classList.toggle('is-locked', !isComplete && !isNext);
+    world.classList.toggle('is-locked', !isComplete && !isNext && !isCyberpunk);
     world.setAttribute('aria-pressed', String(world.dataset.quest === selectedQuestId));
     world.querySelector('.quest-world-prompt').textContent = isComplete
       ? 'Completed ✓'
       : isNext
         ? 'Start this quest →'
-        : 'Locked — finish the previous quest first';
+        : isCyberpunk
+          ? 'Play anytime →'
+          : 'Locked — finish the previous quest first';
   });
 
   const progress = $('#questProgress');
@@ -489,7 +492,7 @@ updateQuestProgress();
 
 questWorlds.forEach((world) => {
   world.addEventListener('click', () => {
-    if (world.disabled || questOrder[completedQuests.length] !== world.dataset.quest) return;
+    if (world.disabled || (questOrder[completedQuests.length] !== world.dataset.quest && world.dataset.quest !== 'duel-runner')) return;
     selectedQuest = quests[world.dataset.quest];
     if (!selectedQuest) return;
     selectedQuestId = world.dataset.quest;
@@ -559,7 +562,9 @@ $$('.cyberpunk-pad').forEach((button) => {
         $('#playCyberpunkSignal').hidden = true;
         $('#cyberpunkFeedback').textContent = 'Transmission complete. Happy birthday, Joshua! 💛';
         completeQuestButton.disabled = false;
-        completeQuestButton.textContent = 'Collect your lava cake!';
+        completeQuestButton.textContent = questOrder[completedQuests.length] === 'duel-runner'
+          ? 'Collect your lava cake!'
+          : 'Return to quests';
       } else {
         $('#cyberpunkRoundLabel').textContent = `ROUND ${cyberpunkRound} / ${cyberpunkSequences.length}`;
         $('#cyberpunkSignalMessage').textContent = 'Signal saved! Ready for the next one?';
@@ -752,6 +757,14 @@ completeQuestButton?.addEventListener('click', () => {
   if (selectedQuest.hasRace && raceWins < raceStops.length + 1) return;
   if (selectedQuest.hasHunt && (huntTurnIndex < huntTurns.length || wyvernStamina > 0)) return;
   if (selectedQuest.hasCyberpunk && !cyberpunkComplete) return;
+
+  if (selectedQuestId === 'duel-runner' && questOrder[completedQuests.length] !== selectedQuestId) {
+    selectedQuest = null;
+    selectedQuestId = null;
+    questPanel.hidden = true;
+    updateQuestProgress();
+    return;
+  }
 
   completeCurrentQuest();
 });
