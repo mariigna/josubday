@@ -1784,9 +1784,15 @@ button {
   position: relative;
   z-index: 8;
   padding: 18px 40px;
-  color: #171717;
-  color: rgba(23, 23, 23, 0.3);
+  color: #fff;
+  background: var(--rose);
   font-size: 18px;
+  font-weight: 600;
+  border: 0;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+  cursor: pointer;
+  transition: 0.4s;
 }
 
 .cyberpunk-note.is-matched {
@@ -1808,6 +1814,11 @@ button {
   cursor: default;
   opacity: 0.92;
   transform: none;
+}
+
+.cut-cake-btn:focus-visible {
+  outline: 3px solid var(--champagne);
+  outline-offset: 4px;
 }
 
 @keyframes smokeUp {

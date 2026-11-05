@@ -860,7 +860,7 @@ cutCakeBtn?.addEventListener('click', async () => {
   await wait(1500);
 
   cakeStageText.textContent = ' cake is cutting 🔪';
-  cutCakeBtn.textContent = '';
+  cutCakeBtn.textContent = 'Cutting Cake...';
   cake.classList.add('knife-in');
   await wait(1200);
 
